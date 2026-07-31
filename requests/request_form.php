@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../connect.php';
-require_once __DIR__ . '/../includes/auth.php';
+require_once _DIR_ . '/../connect.php';
+require_once _DIR_ . '/../includes/auth.php';
 header('Content-Type: text/html; charset=UTF-8'); 
 
 $user = require_login(['admin', 'staff']);
@@ -58,27 +58,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Submit Blood Request — Blood Bank Management System</title>
+<link rel="stylesheet" href="<?= BASE_URL ?>assets/css/theme.css">
 <style>
-  body { font-family: Arial, sans-serif; background:#ffffff; color:#222; margin:0; padding:24px; }
-  .wrap { max-width: 640px; margin: 0 auto; }
-  nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; font-size:14px; }
-  nav a { color:#c0392b; text-decoration:none; margin-left:14px; }
-  .card { background:#fff; padding:28px; border-radius:10px; border:2px solid #c0392b; }
-  h1 { font-size: 20px; margin: 0 0 20px; color:#222; }
-  label { display: block; margin-top: 14px; font-weight: bold; font-size: .9rem; color:#555; }
-  select, input, textarea { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border:1px solid #ddd; border-radius:6px; }
-  select:focus, input:focus, textarea:focus { outline:none; border-color:#c0392b; }
-  button { margin-top: 20px; padding: 10px 18px; background: #c0392b; color: #fff; border: none; border-radius: 6px; font-weight:bold; cursor: pointer; }
-  button:hover { background: #a5281c; }
-  .msg-ok  { background: #e6f4ea; border: 1px solid #34a853; padding: 10px; border-radius: 6px; }
-  .msg-err { background: #fdecea; color:#c0392b; border: 1px solid #f5c6c1; padding: 10px; border-radius: 6px; }
+  .main-inner { max-width: 640px; }
+  .card { padding: 28px; }
+  h1 { font-size: 20px; margin: 0 0 20px; }
   .row { display: flex; gap: 12px; }
   .row > div { flex: 1; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <?php include __DIR__ . '/../includes/staff_nav.php'; ?>
+<div class="app-shell">
+  <?php include _DIR_ . '/../includes/staff_nav.php'; ?>
+  <div class="main">
+  <div class="main-inner">
   <div class="card">
   <h1>Submit Blood Request</h1>
 
@@ -153,7 +146,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <button type="submit">Submit Request</button>
 </form>
 
-<p style="margin-top:20px;"><a href="status.php" style="color:#c0392b;">View request status &rarr;</a></p>
+<p style="margin-top:20px;"><a href="status.php" style="color:var(--red);">View request status &rarr;</a></p>
+  </div>
+  </div>
   </div>
 </div>
 
@@ -172,9 +167,9 @@ document.getElementById('hospital_id').addEventListener('change', function () {
     .then(r => r.json())
     .then(data => {
       doctorSel.innerHTML = '<option value="">-- Select doctor --</option>' +
-        data.doctors.map(d => `<option value="${d.doctor_id}">${d.name} (${d.specialization ?? 'General'})</option>`).join('');
+        data.doctors.map(d => <option value="${d.doctor_id}">${d.name} (${d.specialization ?? 'General'})</option>).join('');
       patientSel.innerHTML = '<option value="">-- Select patient --</option>' +
-        data.patients.map(p => `<option value="${p.patient_id}">${p.name}</option>`).join('');
+        data.patients.map(p => <option value="${p.patient_id}">${p.name}</option>).join('');
     })
     .catch(() => {
       doctorSel.innerHTML  = '<option value="">Failed to load</option>';
@@ -184,4 +179,3 @@ document.getElementById('hospital_id').addEventListener('change', function () {
 </script>
 </body>
 </html>
-
