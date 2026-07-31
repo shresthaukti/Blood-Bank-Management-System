@@ -7,9 +7,8 @@ JSON API layer used by the front-end pages for dynamic interactions.
 
 ---
 ## Visit Our Website
-Scan the QR below:
-
-![Website QR Code](images/hemolink-website.png)
+### Scan the QR below or click it:
+[![Website QR Code](images/hemolink-website.png)](https://hemolink-loct.onrender.com/)
 ---
 
 ## Features
@@ -53,52 +52,6 @@ Scan the QR below:
 
 ---
 
-
-## Setup
-
-### 1. Requirements
-- PHP 8.0+ with the `pdo_pgsql` extension enabled
-- PostgreSQL 12+
-- A web server (Apache/Nginx) or `php -S localhost:8000` for local development
-
-### 2. Create the database
-
-```bash
-createdb blood_bank
-psql -d blood_bank -f database.sql
-```
-
-### 3. Configure credentials
-
-Copy the example config and fill in your own database credentials. `config.php` is
-gitignored on purpose — never commit real credentials.
-
-```php
-<?php
-define('DB_HOST', 'localhost');
-define('DB_PORT', 5432);
-define('DB_NAME', 'blood_bank');
-define('DB_USER', 'your_db_user');
-define('DB_PASS', 'your_db_password');
-define('BASE_URL', '/');
-?>
-```
-
-### 4. Run it
-
-```bash
-php -S localhost:8000
-```
-
-Then visit `http://localhost:8000/index.php`.
-
-### 5. Log in
-
-- **Donors** can self-register via `register.php`.
-- **Staff/Admin** accounts must be seeded directly into `app_user` (with a
-  `password_hash()`-generated hash) since there's no public staff sign-up flow.
-
----
 
 ## Security Notes
 
