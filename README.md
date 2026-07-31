@@ -6,6 +6,10 @@ workflow that connects them. It's built with plain PHP (PDO) on top of PostgreSQ
 JSON API layer used by the front-end pages for dynamic interactions.
 
 ---
+## Visit Our Website
+Scan the QR below:
+![Website QR Code](images/hemolink-website.png)
+---
 
 ## Features
 
