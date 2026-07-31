@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once _DIR_ . '/../connect.php';
-require_once _DIR_ . '/../includes/auth.php';
+require_once __DIR__ . '/../connect.php';
+require_once __DIR__ . '/../includes/auth.php';
 header('Content-Type: text/html; charset=UTF-8'); 
 
 $user = require_login(['admin', 'staff']);
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="app-shell">
-  <?php include _DIR_ . '/../includes/staff_nav.php'; ?>
+  <?php include __DIR__ . '/../includes/staff_nav.php'; ?>
   <div class="main">
   <div class="main-inner">
   <div class="card">
@@ -167,9 +167,9 @@ document.getElementById('hospital_id').addEventListener('change', function () {
     .then(r => r.json())
     .then(data => {
       doctorSel.innerHTML = '<option value="">-- Select doctor --</option>' +
-        data.doctors.map(d => <option value="${d.doctor_id}">${d.name} (${d.specialization ?? 'General'})</option>).join('');
+        data.doctors.map(d => `<option value="${d.doctor_id}">${d.name} (${d.specialization ?? 'General'})</option>`).join('');
       patientSel.innerHTML = '<option value="">-- Select patient --</option>' +
-        data.patients.map(p => <option value="${p.patient_id}">${p.name}</option>).join('');
+        data.patients.map(p => `<option value="${p.patient_id}">${p.name}</option>`).join('');
     })
     .catch(() => {
       doctorSel.innerHTML  = '<option value="">Failed to load</option>';
