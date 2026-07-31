@@ -45,12 +45,12 @@ Go to **Staff/Admin Login** then click **Quick Demo Admin Login** to access hemo
 
 ## Tech Stack
 
-| Layer     | Technology                          |
-|-----------|--------------------------------------|
-| Language  | PHP 8+ (`declare(strict_types=1)`, PDO) |
-| Database  | PostgreSQL                          |
-| Frontend  | Server-rendered HTML/CSS + vanilla JS (fetch API) |
-| API       | JSON endpoints under `/api` (CORS-enabled) |
+| Layer| Technology|
+|---|---|
+| Language| PHP 8+ (`declare(strict_types=1)`, PDO) |
+| Database | PostgreSQL |
+| Frontend | Server-rendered HTML/CSS + vanilla JS (fetch API) |
+| API | JSON endpoints under `/api` (CORS-enabled) |
 
 ---
 
