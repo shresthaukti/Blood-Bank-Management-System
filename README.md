@@ -8,6 +8,7 @@ JSON API layer used by the front-end pages for dynamic interactions.
 ---
 ## Visit Our Website
 Scan the QR below:
+
 ![Website QR Code](images/hemolink-website.png)
 ---
 
@@ -107,8 +108,3 @@ Then visit `http://localhost:8000/index.php`.
   used on every protected page and API endpoint.
 - `config.php` (real DB credentials) is excluded from version control via `.gitignore`.
 
-> **Before deploying this publicly:** rotate any credentials that were ever committed to
-> version control, and review `api/*.php` endpoints for CSRF protection if you plan to
-> expose them beyond the same-origin front end.
-
----
