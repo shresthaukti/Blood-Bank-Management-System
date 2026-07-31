@@ -8,6 +8,8 @@ JSON API layer used by the front-end pages for dynamic interactions.
 ---
 ## Visit Our Website
 ### Scan the QR below or click it:
+Go to **Staff/Admin Login** then click **Quick Demo Admin Login** to access hemolink as admin
+
 [![Website QR Code](images/hemolink-website.png)](https://hemolink-loct.onrender.com/)
 ---
 
